@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminPostoController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminAutomovelController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,55 +25,34 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "posto";
+			$this->table = "automovel";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nome do Posto","name"=>"nome","width"=>"10"];
-			$this->col[] = ["label"=>"Telefone de Contato","name"=>"telefoneContato","width"=>"10"];
-			$this->col[] = ["label"=>"Cidade","name"=>"cidade","width"=>"10"];
-			$this->col[] = ["label"=>"Estado","name"=>"estado","width"=>"10"];
-			$this->col[] = ["label"=>"Bairro","name"=>"bairro","width"=>"10"];
-			$this->col[] = ["label"=>"Rua","name"=>"rua","width"=>"10"];
-			$this->col[] = ["label"=>"Número","name"=>"numero","width"=>"10"];
-			$this->col[] = ["label"=>"Complemento","name"=>"complemento","width"=>"10"];
-			$this->col[] = ["label"=>"É 24 horas?","name"=>"24horas","width"=>"10"];
-			$this->col[] = ["label"=>"Horário de Abertura","name"=>"horarioabertura","width"=>"10"];
-			$this->col[] = ["label"=>"Horário de Fechamento","name"=>"horariofechamento","width"=>"10"];
-			$this->col[] = ["label"=>"Aceita cartão?","name"=>"cartao","width"=>"10"];
+			$this->col[] = ["label"=>"Marca","name"=>"marca","width"=>"10"];
+			$this->col[] = ["label"=>"Modelo","name"=>"modelo","width"=>"10"];
+			$this->col[] = ["label"=>"Ano","name"=>"ano","width"=>"10"];
+			$this->col[] = ["label"=>"Placa","name"=>"placa","width"=>"10"];
+			$this->col[] = ["label"=>"Capacidade","name"=>"capacidade","width"=>"10"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nome do Posto','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Telefone de Contato','name'=>'telefoneContato','type'=>'text','validation'=>'required|min:1|max:11','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:50','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar estado;AC;AL;AP;AM;BA;CE;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO;RR;SC;SP;SE;TO','default'=>'Selecionar estado'];
-			$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:40','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:150','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Número','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
-			$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
+			$this->form[] = ['label'=>'Marca','name'=>'marca','type'=>'text','validation'=>'required|min:1|max:40','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Modelo','name'=>'modelo','type'=>'text','validation'=>'required|min:1|max:400','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Ano','name'=>'ano','type'=>'text','validation'=>'required|min:1|max:4','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Placa','name'=>'placa','type'=>'text','validation'=>'required|min:1|max:8','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Capacidade máxima em litros do tanque','name'=>'capacidade','type'=>'text','validation'=>'required|min:1|max:3','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Nome do Posto','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Telefone de Contato','name'=>'telefoneContato','type'=>'text','validation'=>'required|min:1|max:22','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Selecionar estado;AC;AL;AP;AM;BA;CE;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO;RR;SC;SP;SE;TO','default'=>'Selecionar estado'];
-			//$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:80','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:300','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Número','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:20','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:400','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
-			//$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
+			//$this->form[] = ["label"=>"Marca","name"=>"marca","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Modelo","name"=>"modelo","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Ano","name"=>"ano","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Placa","name"=>"placa","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
+			//$this->form[] = ["label"=>"Capacidade","name"=>"capacidade","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
 			# OLD END FORM
 
 			/* 
