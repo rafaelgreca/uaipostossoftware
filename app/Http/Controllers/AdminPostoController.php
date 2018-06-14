@@ -49,15 +49,15 @@
 			$this->form[] = ['label'=>'Nome do Posto','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Telefone de Contato','name'=>'telefoneContato','type'=>'text','validation'=>'required|min:1|max:22','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'AC;AL;AP;AM;BA;CE;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO;RR;SC;SP;SE;TO','default'=>'AC'];
+			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Selecionar estado;AC;AL;AP;AM;BA;CE;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO;RR;SC;SP;SE;TO','default'=>'Selecionar estado'];
 			$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:80','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:300','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Número','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:20','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:400','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'SIM;NÃO','default'=>'NÃO'];
+			$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
 			$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'SIM;NÃO','default'=>'NÃO'];
+			$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -70,10 +70,10 @@
 			//$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:300','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Número','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:20','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:400','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'SIM;NÃO'];
-			//$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'time','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'time','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'SIM;NÃO'];
+			//$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'SIM;NÃO','default'=>'NÃO'];
+			//$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'SIM;NÃO','default'=>'NÃO'];
 			# OLD END FORM
 
 			/* 
