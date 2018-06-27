@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 
-	class AdminPostoController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminCombustiveisController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -25,55 +25,28 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "posto";
+			$this->table = "combustiveis";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nome do Posto","name"=>"nome","width"=>"10"];
-			$this->col[] = ["label"=>"Telefone de Contato","name"=>"telefoneContato","width"=>"10"];
-			$this->col[] = ["label"=>"Cidade","name"=>"cidade","width"=>"10"];
-			$this->col[] = ["label"=>"Estado","name"=>"estado","width"=>"10"];
-			$this->col[] = ["label"=>"Bairro","name"=>"bairro","width"=>"10"];
-			$this->col[] = ["label"=>"Rua","name"=>"rua","width"=>"10"];
-			$this->col[] = ["label"=>"Número","name"=>"numero","width"=>"10"];
-			$this->col[] = ["label"=>"Complemento","name"=>"complemento","width"=>"10"];
-			$this->col[] = ["label"=>"É 24 horas?","name"=>"24horas","width"=>"10"];
-			$this->col[] = ["label"=>"Horário de Abertura","name"=>"horarioabertura","width"=>"10"];
-			$this->col[] = ["label"=>"Horário de Fechamento","name"=>"horariofechamento","width"=>"10"];
-			$this->col[] = ["label"=>"Aceita cartão?","name"=>"cartao","width"=>"10"];
+			$this->col[] = ["label"=>"Nome do Combustível","name"=>"nome","width"=>"10"];
+			$this->col[] = ["label"=>"Código","name"=>"codigo","width"=>"10"];
+			$this->col[] = ["label"=>"Preço por litro","name"=>"preco","width"=>"10"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nome do Posto','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Telefone de Contato','name'=>'telefoneContato','type'=>'text','validation'=>'required|min:1|max:11','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:50','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar estado;AC;AL;AP;AM;BA;CE;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO;RR;SC;SP;SE;TO','default'=>'Selecionar estado'];
-			$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:40','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:150','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Número','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
-			$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
+			$this->form[] = ['label'=>'Nome do Combustível','name'=>'nome','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Escolher combustível;Gasolina Comum;Gasolina Aditivada;Gasolina Premium;Etanol;Etanol Aditivado;Diesel Comum;Diesel S-10;Diesel Aditivado;Diesel Premium;GNV','default'=>'Escolher combustível'];
+			$this->form[] = ['label'=>'Código','name'=>'codigo','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Preço por litro','name'=>'preco','type'=>'text','validation'=>'required|min:1','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ['label'=>'Nome do Posto','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:100','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Telefone de Contato','name'=>'telefoneContato','type'=>'text','validation'=>'required|min:1|max:11','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'required|min:1|max:50','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar estado;AC;AL;AP;AM;BA;CE;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO;RR;SC;SP;SE;TO','default'=>'Selecionar estado'];
-			//$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:40','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:150','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Número','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
-			//$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
+			//$this->form[] = ['label'=>'Nome do Combustível','name'=>'nome','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Escolher combustível;Gasolina Comum;Gasolina Aditivada;Gasolina Premium;Etanol;Etanol Aditivado;Diesel Comum;Diesel S-10;Diesel Aditivado;Diesel Premium;GNV','default'=>'Escolher combustível'];
+			//$this->form[] = ['label'=>'Código','name'=>'codigo','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Preço por litro','name'=>'preco','type'=>'text','validation'=>'required|min:1','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 

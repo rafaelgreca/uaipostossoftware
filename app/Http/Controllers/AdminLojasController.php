@@ -54,9 +54,9 @@
 			$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:150','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Número','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','style'=>'Selecionar opção;SIM;NÃO','value'=>'Selecionar opção'];
-			$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','style'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar Opção'];
+			$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
 			# END FORM DO NOT REMOVE THIS LINE
 
@@ -69,8 +69,8 @@
 			//$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'required|min:1|max:40','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Rua','name'=>'rua','type'=>'text','validation'=>'required|min:1|max:150','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Número','name'=>'numero','type'=>'text','validation'=>'required|min:1|max:10','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'required|min:1|max:200','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'text','validation'=>'required','width'=>'col-sm-10','style'=>'Selecionar opção;SIM;NÃO','value'=>'Selecionar opção'];
+			//$this->form[] = ['label'=>'Complemento','name'=>'complemento','type'=>'text','validation'=>'min:1|max:200','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'É 24 horas?','name'=>'24horas','type'=>'select','validation'=>'required','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','style'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar Opção'];
 			//$this->form[] = ['label'=>'Horário de abertura','name'=>'horarioabertura','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Horário de fechamento','name'=>'horariofechamento','type'=>'time','validation'=>'required','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Aceita cartão de crédito e/ou débito?','name'=>'cartao','type'=>'select','width'=>'col-sm-10','dataenum'=>'Selecionar opção;SIM;NÃO','default'=>'Selecionar opção'];
